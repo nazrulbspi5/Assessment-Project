@@ -1,0 +1,61 @@
+﻿    body {
+        font-size: 11px;
+    }
+
+    th {
+        color: black;
+    }
+
+    .datepicker th, td {
+        color: black;
+    }
+
+    input[type="number"] {
+        border: 1px solid #00ffff;
+        background-color: white;
+        height: 30px;
+    }
+
+    input[type="text"] {
+        border: 1px solid #00ffff;
+        background-color: white;
+        height: 30px;
+    }
+
+    input[type="textarea"] {
+        border: 1px solid #00ffff;
+        background-color: white;
+        height: 30px;
+    }
+
+    input[type="email"] {
+        border: 1px solid #00ffff;
+        background-color: white;
+        height: 30px;
+    }
+     
+    h3 {
+        line-height: 15px;
+    }
+
+    select {
+        border: 1px solid #00ffff !important;
+        background-color: white !important;
+        height: 30px;
+    }
+
+    option:not(:checked) {
+        border: 1px solid #00ffff !important;
+        background-color: white !important;
+    }
+
+    .nav.nav-tabs + .tab-content {
+        padding: 5px 20px 5px 20px;
+    }
+
+    .disabledTab {
+        cursor: not-allowed;
+    }
+    .form-control{
+        border: 1px!important solid #00ffff;
+    }

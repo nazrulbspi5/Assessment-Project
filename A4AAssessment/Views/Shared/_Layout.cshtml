@@ -1,42 +1,173 @@
-﻿<!DOCTYPE html>
-<html>
+﻿
+<!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link rel="shortcut icon" href="~/Images/Basic/logo.gif">
+    <title>@ViewBag.Title - Travel Portal Development Company in Bangladesh | A4 Aero Limited</title>
+
+    @*@Scripts.Render("~/App_Themes/Theme1/blue/assets/js/jquery.min.js")*@
+    @Scripts.Render("~/Scripts/jq.js")
+
+    @*@Scripts.Render("~/App_Themes/Theme1/plugins/datatables/jquery.dataTables.min.js")*@
+    <link href="~/App_Themes/Theme1/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/App_Themes/Theme1/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/App_Themes/Theme1/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/App_Themes/Theme1/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/App_Themes/Theme1/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/App_Themes/Theme1/blue/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/App_Themes/Theme1/plugins/switchery/switchery.min.css" rel="stylesheet" />
+    <link href="~/App_Themes/Theme1/plugins/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+    <!--<link href="~/App_Themes/Theme1/blue/assets/css/bootstrap.min.css" rel="stylesheet" />-->
+
+    <link href="~/App_Themes/Theme1/blue/assets/css/core.css" rel="stylesheet" type="text/css">
+    <link href="~/App_Themes/Theme1/blue/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/App_Themes/Theme1/blue/assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="~/App_Themes/Theme1/blue/assets/css/pages.css" rel="stylesheet" type="text/css">
+    <link href="~/App_Themes/Theme1/blue/assets/css/menu.css" rel="stylesheet" type="text/css">
+    <link href="~/App_Themes/Theme1/blue/assets/css/responsive.css" rel="stylesheet" type="text/css">
+    <script src="~/App_Themes/Theme1/blue/assets/js/modernizr.min.js"></script>
+    <link href="~/App_Themes/Theme1/plugins/select2/select2.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Css/FormDesign.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+<body class="fixed-left">
+
+    <div id="wrapper">
+        <!-- Top Bar Start -->
+        <div class="topbar">
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <div class="text-center">
+                    <a href="" class="logo"><i class="md md-equalizer"></i> <span>A4AL</span> </a>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+            <!-- Navbar -->
+
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <div class="">
+                        <div class="pull-left">
+                            <button class="button-menu-mobile open-left waves-effect">
+                                <i class="md md-menu"></i>
+                            </button>
+                            <span class="clearfix"></span>
+                        </div>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="sidebar-inner slimscrollleft">
+                <div id="sidebar-menu">
+                    <ul>
+                        @*<li>
+                            <a href="javascript:void(0);" class="waves-effect waves-primary">
+                                    <span>Agent</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                            <ul class="list-unstyled">
+                                <li>@Html.ActionLink("Agent", "Agent", "Agent")</li>
+                            </ul>
+                        </li>*@
+                        <li>@Html.ActionLink("Agent Information", "Agent", "Agent")</li>
+
+                    </ul>
+
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="user-detail">
+                <div class="dropup">
+                    <a href="#" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">
+                        @{
+                            var path = "~/Images/user.png";
+
+                        }
+                        <img src="@Url.Content(path)" alt="user-img" class="img-circle">
+                        <span class="user-info-span">
+                            <h5 class="m-t-0 m-b-0"> @Session["UserName"]</h5>
+                        </span>
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@Url.Action("", "" )"><i class="md md-settings"></i> Change Password</a></li>
+                        <li>
+                            @{
+                                <a href="@Url.Action("", "")">
+                                    <i class="md md-settings-power"></i> Sign Out
+                                </a>
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </div>
+            <footer class="footer text-right">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <p>&copy; @DateTime.Now.Year - A4 Aero Limited</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="text-align:right"> Published:06/115/2019 5:55:26 PM</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- /Right-bar -->
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+
+    </script>
+    <!-- Plugins -->
+    @Scripts.Render("~/App_Themes/Theme1/blue/assets/js/bootstrap.min.js")
+    @Scripts.Render("~/App_Themes/Theme1/blue/assets/js/fastclick.js ")
+    @Scripts.Render("~/App_Themes/Theme1/blue/assets/js/wow.min.js ")
+    @Scripts.Render("~/App_Themes/Theme1/plugins/moment/moment.js")
+    @Scripts.Render("~/App_Themes/Theme1/plugins/parsleyjs/dist/parsley.min.js")
+    @Scripts.Render("~/App_Themes/Theme1/blue/assets/js/jquery.core.js ")
+    @Scripts.Render("~/App_Themes/Theme1/blue/assets/js/jquery.app.js ")
+
+    <script src="/App_Themes/Theme1/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/buttons.bootstrap.min.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/pdfmake.min.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/vfs_fonts.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/buttons.print.min.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/responsive.bootstrap.min.js"></script>
+    <script src="/App_Themes/Theme1/plugins/datatables/dataTables.scroller.min.js"></script>
+    <script type="text/javascript" src="/App_Themes/Theme1/plugins/parsleyjs/dist/parsley.min.js"></script>
+
+    <!-- Datatable init js -->
+    <script src="/App_Themes/Theme1/blue/assets/pages/datatables.init.js"></script>
+
+    <!-- Sweet.js -->
+    <link href="/App_Themes/Theme1/plugins/bootstrap-sweetalert/sweet-alert.css" rel="stylesheet" />
+    <script src="/App_Themes/Theme1//plugins/bootstrap-sweetalert/sweet-alert.min.js"></script>
+    <script src="/App_Themes/Theme1/blue/assets/pages/jquery.sweet-alert.init.js"></script>
+
 </body>
 </html>

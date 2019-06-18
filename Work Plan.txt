@@ -1,0 +1,11 @@
+1. Porject & DB Name: A4AAssessment
+2. Tools :
+	VS 2015,
+	SQL 2014,
+	HTML 5,
+	CSS 3,
+	JQuery,
+	AJAX,
+	MVC
+
+3. Template Ready
